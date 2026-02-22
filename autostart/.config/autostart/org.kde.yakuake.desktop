@@ -1,0 +1,16 @@
+[Desktop Entry]
+Categories=Qt;KDE;System;TerminalEmulator;
+Comment[uk_UA]=Спадний замінник термінала, заснований на технології KDE Konsole.
+Comment=A drop-down terminal emulator based on KDE Konsole technology.
+DBusActivatable=true
+Exec=yakuake
+GenericName[uk_UA]=Спадний термінал
+GenericName=Drop-down Terminal
+Icon=yakuake
+Name[uk_UA]=Yakuake
+Name=Yakuake
+Terminal=false
+Type=Application
+X-DBUS-ServiceName=org.kde.yakuake
+X-DBUS-StartupType=Unique
+X-KDE-StartupNotify=false
