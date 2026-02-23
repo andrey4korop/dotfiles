@@ -14,7 +14,7 @@ Dotfiles are plain text configuration files for various applications and tools o
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/dotfiles.git ~/.dotfiles
+    git clone https://github.com/andrey4korop/dotfiles.git ~/.dotfiles
     ```
     (Replace `yourusername` with your GitHub username or the appropriate repository URL.)
 
