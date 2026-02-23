@@ -19,7 +19,7 @@ fi
 if [[ -e /usr/share/zsh/manjaro-zsh-prompt ]]; then
   source /usr/share/zsh/manjaro-zsh-prompt
 fi
-___MY_VMOPTIONS_SHELL_FILE="${HOME}/.jetbrains.vmoptions.sh"; if [ -f "${___MY_VMOPTIONS_SHELL_FILE}" ]; then . "${___MY_VMOPTIONS_SHELL_FILE}"; fi
+
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS='--height 40%  --preview "bat --color=always --style=numbers --line-range=:500 {}" --layout reverse --border top'
 
@@ -27,13 +27,14 @@ export FZF_DEFAULT_OPTS='--height 40%  --preview "bat --color=always --style=num
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #eval "$(zoxide init zsh)"
 
+# --help to bat
 alias bathelp='bat --plain --language=help'
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 help() {
     "$@" --help 2>&1 | bathelp
 }
-
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
 	command yazi "$@" --cwd-file="$tmp"
@@ -42,3 +43,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 export EDITOR=nano
+export PAGER='bat --color=always --style=full --paging=always '
+
+alias cat='bat --paging=never --style="plain"'
+alias c='clear'
+
